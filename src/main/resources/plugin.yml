@@ -1,0 +1,13 @@
+name: TenJava
+main: ten.java.JordanSicherman.Main
+version: 69.69.6.9
+description: A plugin for a contest.
+author: TeeePeee
+
+commands:
+  tenjava:
+    description: The help command.
+
+permissions:
+  
+    
