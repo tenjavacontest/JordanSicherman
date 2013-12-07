@@ -1,13 +1,18 @@
-name: TenJava
+name: SpeareShelf
 main: ten.java.JordanSicherman.Main
 version: 69.69.6.9
 description: A plugin for a contest.
 author: TeeePeee
 
 commands:
-  tenjava:
+  shakespeare:
     description: The help command.
+  read:
+    description: The command to read a book.
+    permission: shakespeare.read
 
 permissions:
-  
+  shakespeare.read:
+    description: The permission needed to read.
+    default: op
     

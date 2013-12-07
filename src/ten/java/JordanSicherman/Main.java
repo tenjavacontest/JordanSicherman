@@ -5,7 +5,9 @@ package ten.java.JordanSicherman;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import ten.java.JordanSicherman.Commands.BookCommand;
 import ten.java.JordanSicherman.Commands.HelpCommand;
+import ten.java.JordanSicherman.Utilities.Utilities;
 
 /**
  * @author Jordan
@@ -13,7 +15,8 @@ import ten.java.JordanSicherman.Commands.HelpCommand;
  */
 public class Main extends JavaPlugin {
 
-	public static Main instance; // The instance of this class for other classes to refer to.
+	public static Main instance; // The instance of this class for other classes
+									// to refer to.
 
 	/**
 	 * The onEnable.
@@ -27,6 +30,14 @@ public class Main extends JavaPlugin {
 
 		// Enable all the commands.
 		doCommands();
+
+		// Cache our book list.
+		Utilities.schedule(true, false, new Runnable() {
+			@Override
+			public void run() {
+				Utilities.getListOfBooks();
+			}
+		}, 0);
 	}
 
 	/**
@@ -42,6 +53,7 @@ public class Main extends JavaPlugin {
 	 * Register all commands.
 	 */
 	private void doCommands() {
-		getCommand("tenjava").setExecutor(new HelpCommand());
+		getCommand("shakespeare").setExecutor(new HelpCommand());
+		getCommand("read").setExecutor(new BookCommand());
 	}
 }
